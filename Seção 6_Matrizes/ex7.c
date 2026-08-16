@@ -7,20 +7,21 @@ imprima os valores abaixo da diagonal principal de uma matriz NxN
 #include <time.h>
 
 int main(){
-    int matriz[4][4];
+    int tam=7;
+    int matriz[tam][tam];
     int i,j;
 
     srand(time(NULL));
 
-    for(i=0;i<4;i++){
-        for(j=0;j<4;j++){
+    for(i=0;i<tam;i++){
+        for(j=0;j<tam;j++){
             matriz[i][j]=rand()%10;
         }
     }
     
     printf("Matriz: \n");
-    for(i=0;i<4;i++){
-        for(j=0;j<4;j++){
+    for(i=0;i<tam;i++){
+        for(j=0;j<tam;j++){
             printf("%d |",matriz[i][j]);
         }
         printf("\n");
@@ -28,22 +29,17 @@ int main(){
 
 
     printf("\nElementos abaixo da diagonal: \n");
-    for(i=0;i<4;i++){
-        for(j=0;j<4;j++){
+    for(i=0;i<tam;i++){
+        for(j=0;j<tam;j++){
             if(i>j){
-                printf("%d ",matriz[i][j]);
+                printf(" %d ",matriz[i][j]);
+            }
+            else{
+                printf(" _ ");
             }
         }
+        printf("\n");
     }
-
-
-    /*
-    11 12 13 14
-    21 22 23 24
-    31 32 33 34
-    41 42 43 44
-    */
-
 
 
     return 0;
